@@ -1,6 +1,6 @@
 CONFIG_FILE=/app/config/config.json
 
-sed -i "s/__MONGODB_CONNECTION_URL__/${MONGODB_CONNECTION_URL}/g" $CONFIG_FILE
+sed -i "s|__MONGODB_CONNECTION_URL__|${MONGODB_CONNECTION_URL}|g" $CONFIG_FILE
 
 if [ ! -z "$REDIS_PORT" ]; then
 	sed -i "s/__REDIS_PORT__/${REDIS_PORT}/g" $CONFIG_FILE
